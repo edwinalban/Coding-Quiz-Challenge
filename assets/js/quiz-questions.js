@@ -1,6 +1,6 @@
 var questionsArr = [
     
-    {question1: "Commonly used data types DO NOT include:",
+    {question1: "Commonly used data types DO NOT include ____.",
     answerIndex: 2,
     choices: [
         "Strings",
@@ -47,12 +47,3 @@ var questionsArr = [
     ]
 }
 ];
-
-var startButton = document.getElementById("start");
-
-startButton.addEventListener("Click", function(event) {
-    event.preventDefault();
-
-    localStorage.setItem("questionsArr", JSON.stringify(question1));
-    console.log(localStorage.question1);
-    });
