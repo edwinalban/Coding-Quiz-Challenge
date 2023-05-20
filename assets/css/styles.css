@@ -20,7 +20,7 @@
 }
 
 .hidden {
-    display: block;
+    display: none;
     text-align: center;
 }
 
@@ -37,3 +37,9 @@ button:hover {
 #end {
     display: none;
 }
+
+ol {
+    padding-left: 0px;
+    max-height: 400px;
+    overflow: auto;
+  }

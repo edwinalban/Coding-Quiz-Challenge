@@ -1,24 +1,30 @@
-var questionTitle = document.getElementById("question-title");
-// var answers = document.getElementById("answers");
+var startBtn = document.getElementById("start");
+startBtn.addEventListener("click", displayQuestions);
 
-document.getElementById("question-title").textContent = questionsArr[0].question1;
-// document.getElementById("answers").textContent = questionsArr[0].choices;
+function displayQuestions() {
+
+    for (var i =0; i < questionsArr; i++)
+    var questionIndex = Math.floor(Math.random() * questionsArr.length);
+    var currentQuestion = questionsArr[questionIndex];
+
+    makeOL();
+};
 
 function makeOL(questionsArr) {
+    var questionTitle = document.getElementById("question-title");
+
+    document.getElementById("question-title").textContent = questionsArr.question;
+    
     var list = document.createElement('ol');
 
         for (var i = 0; i < questionsArr.length; i++) {
             var item = document.createElement('li');
             
-            item.appendChild(document.createTextNode(array[i]));
+            item.appendChild(document.createTextNode(questionsArr[i]));
 
             list.appendChild(item);
         }
     return list;
 }
 
-document.getElementById("answers").appendChild(makeOL(questionsArr[0]));
-
-console.log(questionTitle);
-console.log(list);
-
+document.getElementById("answers").appendChild(displayQuestions(questionsArr.choices));
