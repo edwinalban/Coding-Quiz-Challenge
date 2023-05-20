@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <section>
+        <div class="scores">
+            <a href="scores.html">View Highscores</a>
+        </div>
+        </section>
+
+        <section>
+            <div class="timer">Time: <span id="time">0</span></div>
+        </section>
+
+        <section>
+            <div class="home-wrapper">
+                <h1>Coding Quiz Challenge</h1>
+                <p>
+                    Try and answer the following questions within the time
+                    limit. You will have 75 secconds. Keep in mind that a 
+                    15 second penalty will be incurred for each incorrect 
+                    answer! Your final score will be the amount of time left
+                    on the timer at the end.
+                </p>
+                <button class="start">Start Quiz</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="hide">
+                <h2>All done!</h2>
+                <p>Your final score is <span id="final-score"></span></p>
+                <p>Enter initials:</p>
+                <input type="text">
+                <button class="submit-button">Submit</button>
+            </div>
+        </section>
+
+        <script src="./assets/js/quiz-questions.js"></script>
+        <script src="./assets/js/logic.js"></script>
+    </body>
+</html>
