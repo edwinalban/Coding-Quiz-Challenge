@@ -27,22 +27,29 @@
                     answer! Your final score will be the amount of time left
                     on the timer at the end.
                 </p>
-                <button class="start">Start Quiz</button>
+                <button class="start" id="start">Start Quiz</button>
             </div>
         </section>
 
         <section>
-            <div class="hide" id="end">
+            <div class="hidden" id="coding-questions">
+                <h2 id="question-title"></h2>
+                <div class="answers" id="answers"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="hidden" id="end">
                 <h2>All done!</h2>
                 <p>Your final score is <span id="final-score"></span></p>
                 <p>Enter initials:</p>
-                <input type="text">
-                <button class="submit-button">Submit</button>
+                <input type="text" id="intials">
+                <button class="submit-button" id="submit-button">Submit</button>
             </div>
         </section>
 
         <section>
-            <div class="result hide"></div>
+            <div class="result hidden"></div>
         </section>
 
         <script src="./assets/js/quiz-questions.js"></script>

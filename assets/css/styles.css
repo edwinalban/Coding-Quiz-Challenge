@@ -19,7 +19,17 @@
     text-align: center;
 }
 
-.hide {
-    display: block;
+.hidden {
+    display: none;
     text-align: center;
+}
+
+button {
+    background-color: rgb(9, 56, 56);
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(32, 158, 158);
 }
