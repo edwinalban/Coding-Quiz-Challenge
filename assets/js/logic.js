@@ -1,5 +1,6 @@
 var startBtn = document.getElementById("start");
 startBtn.addEventListener("click", displayQuestions);
+startBtn.addEventListener("click", toggleHidden);
 
 function displayQuestions() {
 
@@ -11,7 +12,6 @@ function displayQuestions() {
     var currentQuestion = questionsArr[questionIndex];
 
     makeOL(currentQuestion);
-    toggleHidden();
 };
 
 function makeOL(currentQuestion) {
