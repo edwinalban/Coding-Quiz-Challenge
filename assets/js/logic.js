@@ -9,7 +9,10 @@ function displayQuestions() {
     var questionIndex = Math.floor(Math.random() * questionsArr.length);
     var currentQuestion = questionsArr[questionIndex];
 
+    console.log(currentQuestion);
+
     makeOL(currentQuestion);
+    questionsArr.splice(questionIndex, 1);
 };
 
 function makeOL(currentQuestion) {
@@ -23,7 +26,6 @@ function makeOL(currentQuestion) {
     var list = document.createElement('ol');
    
         for (var i = 0; i < currentQuestion.choices.length; i++) {
-            console.log(currentQuestion.choices[i]);
             var item = document.createElement('li');
             
             item.appendChild(document.createTextNode(currentQuestion.choices[i]));
@@ -40,7 +42,6 @@ var timer = document.getElementById("time");
 
 function countdown() {
     var timeLeft = 75;
-// need set interval
     var timeInterval = setInterval(function () {
         if (timeLeft >= 1) {
             timer.textContent = timeLeft;
@@ -49,11 +50,34 @@ function countdown() {
             timer.textContent = '0';
             clearInterval(timeInterval);
             // displayMessage();
-        }
+        };
     }, 1000);
-}
+};
 
-// need splice to remove questions that have already been answered
+function displayResult(currentQuestion) {
+document.addEventListener("click", function(e) {
+    
+    var li = e.target.closest("li");
+        
+        if (li) {
+            var result = document.querySelector(".result");
+            var resultSection = document.getElementById("result");
 
-// can i select li with querySelectorAll, set items as targets and once clicked, compare choices to 
-// answerIndex value in array
+            resultSection.classList.remove("hidden");
+
+            if (e.target != currentQuestion.answerIndex) {
+                result = "Incorrect!";
+            } else {
+                result = "Correct!";
+                
+            };
+        };
+    }); displayResult(currentQuestion);
+        console.log(currentQuestion);
+};
+
+
+
+
+
+

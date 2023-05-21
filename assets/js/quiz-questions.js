@@ -1,7 +1,7 @@
 var questionsArr = [
     
     {question: "Commonly used data types DO NOT include ____.",
-    answerIndex: 2,
+    answerIndex: "2",
     choices: [
         "Strings",
         "Booleans",
@@ -10,7 +10,7 @@ var questionsArr = [
     ]
 },
     {question: "The condition in an 'if/else' statement is enclosed within ___.",
-    answerIndex: 2,
+    answerIndex: "2",
     choices: [
         "Quotes",
         "Bracers",
@@ -19,7 +19,7 @@ var questionsArr = [
     ]
 },
     {question: "Arrays in Javascript can be used to store ____.",
-    answerIndex: 3,
+    answerIndex: "3",
     choices: [
         "Numbers and Strings",
         "Other arrays",
@@ -28,7 +28,7 @@ var questionsArr = [
     ]
 },
     {question: "String values must be enclosed within ____ when being assigned to variables.",
-    answerIndex: 3,
+    answerIndex: "3",
     choices: [
         "Commas",
         "Bracers",
@@ -38,7 +38,7 @@ var questionsArr = [
 },
 
     {question: "A very useful tool used during development and debugging for printing content to the debugger is ____.",
-    answerIndex: 3,
+    answerIndex: "3",
     choices: [
         "JavaScript",
         "Terminal/Bash",
