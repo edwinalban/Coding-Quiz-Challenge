@@ -1,12 +1,10 @@
 var startBtn = document.getElementById("start");
 startBtn.addEventListener("click", displayQuestions);
-startBtn.addEventListener("click", toggleHidden);
 
 function displayQuestions() {
 
     var hideHome = document.querySelector(".home-wrapper");
-
-    hideHome.setAttribute("class", "hidden");
+    hideHome.classList.add("hidden");
 
     var questionIndex = Math.floor(Math.random() * questionsArr.length);
     var currentQuestion = questionsArr[questionIndex];
@@ -16,8 +14,10 @@ function displayQuestions() {
 
 function makeOL(currentQuestion) {
 
-    var questionTitle = document.getElementById("question-title");
+    var questionSection = document.querySelector(".coding-questions");
+    questionSection.classList.remove("hidden");
 
+    var questionTitle = document.getElementById("question-title");
     document.getElementById("question-title").textContent = currentQuestion.question;
     
     var list = document.createElement('ol');
@@ -34,14 +34,6 @@ function makeOL(currentQuestion) {
     document.getElementById("answers").appendChild(list);
 }
 
-// add function to toggle class hidden and display question on click
-function toggleHidden() {
+// need set interval
 
-    var showHidden = document.querySelector(".hidden");
-
-    if (showHidden.style.display === "none") {
-        showHidden.style.display = "flex";
-    } else {
-        showHidden.style.display = "none";
-    }
-}
+// need splice to remove questions that have already been answered
