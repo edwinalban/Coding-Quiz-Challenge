@@ -3,14 +3,19 @@ startBtn.addEventListener("click", displayQuestions);
 
 function displayQuestions() {
 
+    var hideHome = document.querySelector(".home-wrapper");
+
+    hideHome.setAttribute("class", "hidden");
+
     var questionIndex = Math.floor(Math.random() * questionsArr.length);
     var currentQuestion = questionsArr[questionIndex];
 
     makeOL(currentQuestion);
+    toggleHidden();
 };
 
 function makeOL(currentQuestion) {
-    console.log(currentQuestion);
+
     var questionTitle = document.getElementById("question-title");
 
     document.getElementById("question-title").textContent = currentQuestion.question;
@@ -25,7 +30,18 @@ function makeOL(currentQuestion) {
 
             list.appendChild(item);
         }
-        console.log(list);
 
     document.getElementById("answers").appendChild(list);
+}
+
+// add function to toggle class hidden and display question on click
+function toggleHidden() {
+
+    var showHidden = document.querySelector(".hidden");
+
+    if (showHidden.style.display === "none") {
+        showHidden.style.display = "flex";
+    } else {
+        showHidden.style.display = "none";
+    }
 }
