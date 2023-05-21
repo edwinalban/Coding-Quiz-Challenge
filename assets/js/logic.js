@@ -34,6 +34,26 @@ function makeOL(currentQuestion) {
     document.getElementById("answers").appendChild(list);
 }
 
+startBtn.addEventListener("click", countdown);
+
+var timer = document.getElementById("time");
+
+function countdown() {
+    var timeLeft = 75;
 // need set interval
+    var timeInterval = setInterval(function () {
+        if (timeLeft >= 1) {
+            timer.textContent = timeLeft;
+            timeLeft--; 
+        } else {
+            timer.textContent = '0';
+            clearInterval(timeInterval);
+            // displayMessage();
+        }
+    }, 1000);
+}
 
 // need splice to remove questions that have already been answered
+
+// can i select li with querySelectorAll, set items as targets and once clicked, compare choices to 
+// answerIndex value in array
