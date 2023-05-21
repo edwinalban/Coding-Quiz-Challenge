@@ -3,28 +3,29 @@ startBtn.addEventListener("click", displayQuestions);
 
 function displayQuestions() {
 
-    for (var i =0; i < questionsArr; i++)
     var questionIndex = Math.floor(Math.random() * questionsArr.length);
     var currentQuestion = questionsArr[questionIndex];
 
-    makeOL();
+    makeOL(currentQuestion);
 };
 
-function makeOL(questionsArr) {
+function makeOL(currentQuestion) {
+    console.log(currentQuestion);
     var questionTitle = document.getElementById("question-title");
 
-    document.getElementById("question-title").textContent = questionsArr.question;
+    document.getElementById("question-title").textContent = currentQuestion.question;
     
     var list = document.createElement('ol');
-
-        for (var i = 0; i < questionsArr.length; i++) {
+   
+        for (var i = 0; i < currentQuestion.choices.length; i++) {
+            console.log(currentQuestion.choices[i]);
             var item = document.createElement('li');
             
-            item.appendChild(document.createTextNode(questionsArr[i]));
+            item.appendChild(document.createTextNode(currentQuestion.choices[i]));
 
             list.appendChild(item);
         }
-    return list;
-}
+        console.log(list);
 
-document.getElementById("answers").appendChild(displayQuestions(questionsArr.choices));
+    document.getElementById("answers").appendChild(list);
+}

@@ -2,7 +2,7 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.scores {
+.highscores {
     position: absolute;
     top: 30px;
     left: 30px;
@@ -34,8 +34,15 @@ button:hover {
     background-color: rgb(32, 158, 158);
 }
 
-#end {
-    display: none;
+.coding-questions {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+#coding-questions {
+    width: 25rem;
 }
 
 ol {
@@ -43,3 +50,21 @@ ol {
     max-height: 400px;
     overflow: auto;
   }
+
+li {
+padding: 5px;
+list-style: decimal inside none;
+background-color:  rgb(9, 56, 56);
+color: white;
+width: max-content;
+border-radius: 4px;
+margin: 5px;
+}
+
+
+
+
+
+#end {
+    display: none;
+}
