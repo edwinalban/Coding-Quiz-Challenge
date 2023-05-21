@@ -30,6 +30,18 @@ function makeOL(currentQuestion) {
             
             item.appendChild(document.createTextNode(currentQuestion.choices[i]));
 
+            item.addEventListener("click", function() {
+                var result = document.querySelector(".result");
+                var resultSection = document.getElementById("result")
+
+                resultSection.classList.remove("hidden");
+
+                if (this.textContent == currentQuestion.answer) {
+                    result.textContent = "Correct!";
+                } else {
+                    result.textContent = "Incorrect!";
+                }
+            })
             list.appendChild(item);
         }
 
@@ -53,29 +65,6 @@ function countdown() {
         };
     }, 1000);
 };
-
-function displayResult(currentQuestion) {
-document.addEventListener("click", function(e) {
-    
-    var li = e.target.closest("li");
-        
-        if (li) {
-            var result = document.querySelector(".result");
-            var resultSection = document.getElementById("result");
-
-            resultSection.classList.remove("hidden");
-
-            if (e.target != currentQuestion.answerIndex) {
-                result = "Incorrect!";
-            } else {
-                result = "Correct!";
-                
-            };
-        };
-    }); displayResult(currentQuestion);
-        console.log(currentQuestion);
-};
-
 
 
 
