@@ -41,6 +41,8 @@ function makeOL(currentQuestion) {
                 } else {
                     result.textContent = "Incorrect!";
                 }
+
+                questionDelay();
             })
             list.appendChild(item);
         }
@@ -66,6 +68,31 @@ function countdown() {
     }, 1000);
 };
 
+function questionDelay() {
+    var timeLeft = 1;
+    var timeInterval = setInterval(function() {
+        if (timeLeft >= 1) {
+            timeLeft--;
+         } else {
+            
+            var questionIndex = Math.floor(Math.random() * questionsArr.length);
+            var currentQuestion = questionsArr[questionIndex];
+        
+            console.log(currentQuestion);
+        
+            questionsArr.splice(questionIndex, 1);
+            clearInterval(timeInterval);
+            
+            var hideLi = document.querySelectorAll("li");
+            console.log(hideLi);
+            hideLi.classList.add("hidden");
+        }
+
+        if (questionsArr === 0) {
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+}
 
 
 
