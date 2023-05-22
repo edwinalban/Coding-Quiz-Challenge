@@ -43,7 +43,7 @@ function makeOL(currentQuestion) {
                     result.textContent = "Incorrect!";
                 }
 
-                questionDelay();
+                // questionDelay();
                 questionIndex++;
                 displayQuestions();
             });
@@ -73,26 +73,26 @@ function countdown() {
     }, 1000);
 };
 
-function questionDelay() {
+// function questionDelay() {
 
-    var timeLeft = 1;
+//     var timeLeft = 1;
 
-    var timeInterval = setInterval(function() {
-        if (timeLeft >= 1) {
-            timeLeft--;
-         } else {
-            clearInterval(timeInterval);
+//     var timeInterval = setInterval(function() {
+//         if (timeLeft >= 1) {
+//             timeLeft--;
+//          } else {
+//             clearInterval(timeInterval);
             
-            var liElement = document.getElementById("answers");
-            console.log(liElement);
-            liElement.classList.add("hidden");
-        }
+//             var liElement = document.getElementById("answers");
+//             console.log(liElement);
+//             liElement.classList.add("hidden");
+//         }
 
-        if (questionsArr === 0) {
-            clearInterval(timeInterval);
-        }
-    }, 1000);
-}
+//         if (questionsArr === 0) {
+//             clearInterval(timeInterval);
+//         }
+//     }, 1000);
+// }
 
 
 
