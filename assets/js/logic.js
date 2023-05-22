@@ -8,8 +8,6 @@ function displayQuestions() {
 
     var questionIndex = Math.floor(Math.random() * questionsArr.length);
 
-    console.log(questionsArr[questionIndex]);
-
     makeOL(questionsArr[questionIndex]);
     questionsArr.splice(questionIndex, 1);
 };
@@ -57,15 +55,16 @@ function makeOL(currentQuestion) {
 
 startBtn.addEventListener("click", countdown);
 
-function countdown() {
-    
-    var timeLeft = document.getElementById("time").innerHTML;
+var intervalId;
 
-    var timeInterval = setInterval(function () {
+function countdown(timeLeft) {
+    var timeLeft = document.getElementById("time").innerHTML;
+    intervalId = setInterval(function () {
         timeLeft--;
         document.getElementById("time").innerHTML = "" + timeLeft;
-        if (timeLeft < 0) {
-            clearInterval(timeInterval);
+        if (timeLeft <= 0) {
+            clearInterval(intervalId);
+            document.getElementById("time").innerHTML = "0";
         }
     }, 1000);
 };
@@ -73,7 +72,9 @@ function countdown() {
 function subtractTime() {
 
     var timeLeft = document.getElementById("time").innerHTML -= 10;
+    clearInterval(intervalId);
     document.getElementById("time").innerHTML = timeLeft;
+    countdown();
 };
 
 
