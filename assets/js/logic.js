@@ -1,17 +1,16 @@
 var startBtn = document.getElementById("start");
 startBtn.addEventListener("click", displayQuestions);
+var questionIndex = 0;
 
 function displayQuestions() {
-
     var hideHome = document.querySelector(".home-wrapper");
     hideHome.classList.add("hidden");
 
     var questionIndex = Math.floor(Math.random() * questionsArr.length);
-    var currentQuestion = questionsArr[questionIndex];
 
-    console.log(currentQuestion);
+    console.log(questionsArr[questionIndex]);
 
-    makeOL(currentQuestion);
+    makeOL(questionsArr[questionIndex]);
     questionsArr.splice(questionIndex, 1);
 };
 
@@ -26,11 +25,13 @@ function makeOL(currentQuestion) {
     var list = document.createElement('ol');
    
         for (var i = 0; i < currentQuestion.choices.length; i++) {
+            
             var item = document.createElement('li');
             
             item.appendChild(document.createTextNode(currentQuestion.choices[i]));
 
             item.addEventListener("click", function() {
+                
                 var result = document.querySelector(".result");
                 var resultSection = document.getElementById("result")
 
@@ -43,7 +44,9 @@ function makeOL(currentQuestion) {
                 }
 
                 questionDelay();
-            })
+                questionIndex++;
+                displayQuestions();
+            });
             list.appendChild(item);
         }
 
@@ -55,7 +58,9 @@ startBtn.addEventListener("click", countdown);
 var timer = document.getElementById("time");
 
 function countdown() {
+    
     var timeLeft = 75;
+
     var timeInterval = setInterval(function () {
         if (timeLeft >= 1) {
             timer.textContent = timeLeft;
@@ -69,23 +74,18 @@ function countdown() {
 };
 
 function questionDelay() {
+
     var timeLeft = 1;
+
     var timeInterval = setInterval(function() {
         if (timeLeft >= 1) {
             timeLeft--;
          } else {
-            
-            var questionIndex = Math.floor(Math.random() * questionsArr.length);
-            var currentQuestion = questionsArr[questionIndex];
-        
-            console.log(currentQuestion);
-        
-            questionsArr.splice(questionIndex, 1);
             clearInterval(timeInterval);
             
-            var hideLi = document.querySelectorAll("li");
-            console.log(hideLi);
-            hideLi.classList.add("hidden");
+            var liElement = document.getElementById("answers");
+            console.log(liElement);
+            liElement.classList.add("hidden");
         }
 
         if (questionsArr === 0) {

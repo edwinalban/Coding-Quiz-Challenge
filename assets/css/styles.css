@@ -21,7 +21,7 @@
 
 .hidden {
     display: none;
-    text-align: center;
+    
 }
 
 button {
@@ -39,6 +39,7 @@ button:hover {
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
+    text-align: center;
 }
 
 #coding-questions {
