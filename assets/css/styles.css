@@ -40,6 +40,7 @@ button:hover {
     flex-direction: column;
     align-content: center;
     text-align: center;
+    margin-top: 10rem;
 }
 
 #coding-questions {
@@ -65,5 +66,10 @@ margin: 5px;
 li:hover {
     transform: scale(105%);
     cursor: pointer;
+}
+
+.center {
+    margin: auto;
+    width: 30%;
 }
 
