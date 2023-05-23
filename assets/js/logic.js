@@ -99,7 +99,20 @@ function end() {
 
 function allDone() {
     var score = document.getElementById("time");
-    document.getElementById("final-score").textContent = score.textContent;   
+    document.getElementById("final-score").textContent = score.textContent + "!";   
+}
+
+var submitBtn = document.getElementById("submit-button");
+submitBtn.addEventListener("click", submitScore);
+
+function submitScore() {
+    var score = document.getElementById("time").textContent;
+    localStorage.setItem("score", score);
+
+    var initials = document.getElementById("initials").textContent;
+    localStorage.setItem("initials", initials);
+    
+    window.location.href = "scores.html";
 }
 
 
