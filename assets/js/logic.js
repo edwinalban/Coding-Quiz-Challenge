@@ -8,9 +8,6 @@ function displayQuestions() {
 
     var questionIndex = Math.floor(Math.random() * questionsArr.length);
 
-    // console.log(questionsArr[questionIndex]);
-    console.log(questionsArr);
-
     makeOL(questionsArr[questionIndex]);
     questionsArr.splice(questionIndex, 1);
 };
@@ -44,7 +41,7 @@ function makeOL(currentQuestion) {
                 }
 
                 var result = document.querySelector(".result");
-                var resultSection = document.getElementById("result")
+                var resultSection = document.getElementById("result");
 
                 resultSection.classList.remove("hidden");
 
@@ -62,7 +59,7 @@ function makeOL(currentQuestion) {
         }
 
     document.getElementById("answers").appendChild(list);
-}
+};
 
 startBtn.addEventListener("click", countdown);
 
@@ -72,17 +69,16 @@ function countdown(timeLeft) {
     var timeLeft = document.getElementById("time").innerHTML;
     intervalId = setInterval(function () {
         timeLeft--;
-        console.log(timeLeft);
         document.getElementById("time").innerHTML = "" + timeLeft;
         if (timeLeft <= 0) {
             clearInterval(intervalId);
             document.getElementById("time").innerHTML = "0";
+            end();
         }
     }, 1000);
 };
 
 function subtractTime() {
-
     var timeLeft = document.getElementById("time").innerHTML -= 10;
     clearInterval(intervalId);
     document.getElementById("time").innerHTML = timeLeft;
@@ -90,30 +86,40 @@ function subtractTime() {
 };
 
 function end() {
-     var unhideEnd = document.getElementById("end");
+    var timeLeft = document.getElementById("time").innerHTML;
+    var unhideEnd = document.getElementById("end");
     unhideEnd.classList.remove("hidden");
     document.getElementById("question-title").innerHTML = "";
     document.getElementById("answers").innerHTML = "";
+    var score = document.getElementById("time");
+    document.getElementById("final-score").textContent = score.textContent + "!";
     clearInterval(intervalId);
-}
+};
 
 function allDone() {
     var score = document.getElementById("time");
     document.getElementById("final-score").textContent = score.textContent + "!";   
-}
+};
 
 var submitBtn = document.getElementById("submit-button");
 submitBtn.addEventListener("click", submitScore);
 
 function submitScore() {
+    var scoresArr = JSON.parse(localStorage.getItem("score")) || [];
+    var scoreObj = {};
     var score = document.getElementById("time").textContent;
-    localStorage.setItem("score", score);
-
-    var initials = document.getElementById("initials").textContent;
-    localStorage.setItem("initials", initials);
+    var initials = document.getElementById("initials").value;
+    scoreObj.score = score;
+    scoreObj.initials = initials;
+    scoresArr.push(scoreObj);
+    localStorage.setItem("score", JSON.stringify(scoresArr));
+    
+        if (!initials) {
+            return;
+        }
     
     window.location.href = "scores.html";
-}
+};
 
 
 
