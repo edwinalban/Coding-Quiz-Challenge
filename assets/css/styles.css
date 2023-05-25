@@ -100,3 +100,49 @@ li:hover {
     transform: none;
     cursor: auto;
 }
+
+.submit-button {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+
+    h1 {
+        font-size: medium;
+    }
+
+    h2 {
+        font-size: medium;
+        width: 80vw;
+    }
+
+    .home-wrapper {
+        margin-top: 60px;
+    }
+    #coding-questions {
+        width: 20rem;
+        flex-shrink: 1;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    li {
+        padding: 5px;
+        list-style: decimal inside none;
+        background-color:  rgb(9, 56, 56);
+        color: white;
+        width: max-content;
+        border-radius: 4px;
+        margin: 5px 5px 5px 25px;
+    }
+
+    .end h2 {
+        text-align: left;
+    }
+
+    #initials {
+        width: 30vw;
+    }
+}
