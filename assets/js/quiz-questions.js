@@ -1,4 +1,4 @@
-// Set array with objects to reference question to be randomly selected, correct answer, and user choices */
+// Sets array with objects to reference question to be randomly selected, correct answer, and user choices */
 var questionsArr = [
     
     {question: "Commonly used data types DO NOT include ____.",

@@ -1,46 +1,58 @@
-/* Set font universally */
+/* Sets font universally */
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* Position highscores link to top-left of page */
+/* Positions highscores link to top-left of page */
 .highscores {
     position: absolute;
     top: 30px;
     left: 30px;
+    width: 128px;
 }
 
-/* Position timer to top-right of page */
+/* Sets bg/text color, rounded corners, padding, and text decoration for highscores link */
+.highscores a {
+    text-decoration: none;
+    background-color: rgb(9, 56, 56);
+    color: white;
+    border-radius: 4px;
+    padding: 5%;
+
+}
+
+/* Positions timer to top-right of page */
 .timer {
     position: absolute;
     top: 30px;
     right: 30px;
 }
 
-/* Set all margins for divs with home-wrapper class and center text on page */
+/* Sets all margins for divs with home-wrapper class and center text on page */
 .home-wrapper {
     margin: 50px;
     text-align: center;
 }
 
-/* Hide divs with hidden class */
+/* Hides divs with hidden class */
 .hidden {
     display: none;
 }
 
-/* Set color/text color/rounded corners for buttons */
+/* Sets color/text color/rounded corners for buttons */
 button {
     background-color: rgb(9, 56, 56);
     color: white;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-/* Alter button background color on hover */
+/* Alters button background color on hover */
 button:hover {
     background-color: rgb(32, 158, 158);
 }
 
-/* Position questions section in center of page, set top margin */
+/* Positions questions section in center of page, set top margin */
 .coding-questions {
     display: flex;
     flex-wrap: wrap;
@@ -50,19 +62,19 @@ button:hover {
     margin-top: 10rem;
 }
 
-/* Set width for questions div */
+/* Sets width for questions div */
 #coding-questions {
     width: 25rem;
 }
 
-/* Remove padding, set max height and adds scrollbars if needed for ordered lists */
+/* Removes padding, sets max height and adds scrollbars if needed for ordered lists */
 ol {
     padding-left: 0px;
     max-height: 400px;
     overflow: auto;
 }
 
-/* Set padding, list style, background/text color, width, rounded corners, and margins for list items */
+/* Sets padding, list style, background/text color, width, rounded corners, and margins for list items */
 li {
     padding: 5px;
     list-style: decimal inside none;
@@ -93,6 +105,14 @@ li:hover {
     flex-direction: column;
 }
 
+/* Positions result text in center of page, adds margin to top */
+.result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 /* Overwrites li styling with background/text color, no enlarge/cursor change for scores.html list items */
 #scores-list li {
     background-color: white;
@@ -101,10 +121,12 @@ li:hover {
     cursor: auto;
 }
 
+/* Adds top margin to submit button */
 .submit-button {
     margin-top: 5px;
 }
 
+/* Adjusts sizing/positioning for screens smaller than 768px */
 @media screen and (max-width: 768px) {
 
     h1 {
@@ -143,6 +165,6 @@ li:hover {
     }
 
     #initials {
-        width: 30vw;
+        width: 25vw;
     }
 }
