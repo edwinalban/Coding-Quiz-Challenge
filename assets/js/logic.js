@@ -113,6 +113,7 @@ function end() {
     unhideEnd.classList.remove("hidden");
     document.getElementById("question-title").innerHTML = "";
     document.getElementById("answers").innerHTML = "";
+    document.getElementById("result").innerHTML = "";
 
 // Sets score to time left at end of quiz, displays score, and stops timer
     var score = document.getElementById("time");
